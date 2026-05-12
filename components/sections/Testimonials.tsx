@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "motion/react";
 import { Quote } from "lucide-react";
 
 const testimonials = [
@@ -79,7 +81,14 @@ export default function Testimonials() {
               className="w-[300px] shrink-0 pr-4 sm:w-[340px] sm:pr-5 lg:w-[400px] lg:pr-6"
               aria-hidden={i >= testimonials.length}
             >
-              <div className="flex h-full flex-col gap-5 rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-sm transition duration-300 hover:border-primary/30 hover:bg-white/[0.06] lg:p-8">
+              <motion.div
+                whileHover={{
+                  y: -6,
+                  scale: 1.02,
+                  transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
+                }}
+                className="flex h-full flex-col gap-5 rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-sm transition-colors duration-300 hover:border-primary/30 hover:bg-white/[0.06] lg:p-8"
+              >
                 <Quote className="h-7 w-7 text-primary" strokeWidth={1.5} />
                 <p className="text-base leading-relaxed text-white">
                   &ldquo;{t.quote}&rdquo;
@@ -94,7 +103,7 @@ export default function Testimonials() {
                     </p>
                   )}
                 </div>
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>

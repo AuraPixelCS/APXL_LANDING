@@ -1,5 +1,5 @@
 "use client";
-import { useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight, BarChart3, MessageCircle, Rocket } from "lucide-react";
 import SectionMarquee from "@/components/SectionMarquee";
 import { RippleButton } from "@/components/ui/ripple-button";
@@ -70,8 +70,20 @@ export default function MeetPixel() {
               What Pixel Can Do
             </p>
             <ul className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3">
-              {CAPABILITIES.map(({ Icon, title, body }) => (
-                <li key={title} className="h-full">
+              {CAPABILITIES.map(({ Icon, title, body }, i) => (
+                <motion.li
+                  key={title}
+                  initial={{ opacity: 0, y: 28, scale: 0.96 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{
+                    duration: 0.6,
+                    delay: i * 0.1,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                  className="h-full"
+                >
                   <GlowCard
                     glowColor="blue"
                     customSize
@@ -89,7 +101,7 @@ export default function MeetPixel() {
                       </p>
                     </div>
                   </GlowCard>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
