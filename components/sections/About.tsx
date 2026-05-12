@@ -6,11 +6,7 @@ export default function About() {
       <SectionMarquee text="Who We Are" />
 
       <div className="mx-auto w-full max-w-7xl px-6 pb-24 text-center lg:px-16 lg:pb-32">
-        <p className="text-xs uppercase tracking-[0.32em] text-primary">
-          Our Story
-        </p>
-
-        <h2 className="mx-auto mt-6 max-w-4xl text-3xl font-bold leading-[1.15] text-white sm:text-4xl lg:text-5xl">
+        <h2 className="mx-auto max-w-4xl text-3xl font-bold leading-[1.15] text-white sm:text-4xl lg:text-5xl">
           &ldquo;It started with a dream, a camera, and an obsession with
           stories that matter.&rdquo;
         </h2>
