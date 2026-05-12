@@ -1,4 +1,5 @@
 import { Brain, Smile, Users, TrendingUp } from "lucide-react";
+import ScanLine from "@/components/ScanLine";
 
 type Feature = {
   Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
@@ -32,29 +33,7 @@ const FEATURES: Feature[] = [
 export default function AIAnalytics() {
   return (
     <section id="ai-analytics" className="relative overflow-hidden py-24 lg:py-32">
-      {/* Animated scan-line accent */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-px overflow-hidden"
-      >
-        <span
-          className="absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-primary/70 to-transparent"
-          style={{
-            animation: "ai-scan 6s linear infinite",
-          }}
-        />
-      </div>
-
-      <style jsx>{`
-        @keyframes ai-scan {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(450%);
-          }
-        }
-      `}</style>
+      <ScanLine className="top-0" />
 
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-16">
         <div className="mb-12 max-w-3xl lg:mb-16">

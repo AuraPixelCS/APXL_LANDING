@@ -146,6 +146,11 @@ body {
   to { transform: scale(1); opacity: 0; }
 }
 
+@keyframes scan-line {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(450%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;

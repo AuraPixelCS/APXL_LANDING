@@ -1,8 +1,14 @@
 import TiltedCard from "@/components/TiltedCard";
+import ScanLine from "@/components/ScanLine";
 
 export default function VisionMission() {
   return (
-    <section id="direction" className="relative py-24 lg:py-32">
+    <section
+      id="direction"
+      className="relative overflow-hidden py-24 lg:py-32"
+    >
+      <ScanLine className="top-0" />
+
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-16">
         <div className="mb-12 max-w-3xl lg:mb-16">
           <p className="text-xs uppercase tracking-[0.24em] text-primary">
