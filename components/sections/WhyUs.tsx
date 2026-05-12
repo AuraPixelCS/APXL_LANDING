@@ -41,9 +41,9 @@ export default function WhyUs() {
 
       <div className="mx-auto w-full max-w-7xl px-6 pb-24 lg:px-16 lg:pb-32">
         <div className="mb-12 max-w-3xl lg:mb-16">
-          <p className="text-xs uppercase tracking-[0.24em] text-primary">
+          {/* <p className="text-xs uppercase tracking-[0.24em] text-primary">
             Why Us
-          </p>
+          </p> */}
           <h2 className="mt-3 text-3xl font-extrabold uppercase leading-tight tracking-tight text-white sm:text-5xl">
             Fast. Creative. Reliable.
           </h2>

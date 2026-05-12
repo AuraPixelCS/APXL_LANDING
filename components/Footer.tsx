@@ -5,13 +5,7 @@ import {
   InstagramIcon,
 } from "@/components/icons/SocialIcons";
 import FooterAurora from "@/components/FooterAurora";
-
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Contact", href: "#contact" },
-];
+import packageJson from "../package.json";
 
 const socials = [
   {
@@ -28,13 +22,14 @@ const socials = [
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const version = `v${packageJson.version.split(".").slice(0, 2).join(".")}`;
 
   return (
     <footer className="relative isolate overflow-hidden border-t border-white/10 bg-black">
       <FooterAurora />
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-16 lg:py-20">
         <div className="mb-12 grid grid-cols-1 gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-7">
             <Link href="#home" aria-label="Aura Pixel home" className="inline-block">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -50,25 +45,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <nav className="lg:col-span-3">
-            <p className="mb-4 text-xs uppercase tracking-[0.24em] text-white/55">
-              Discover
-            </p>
-            <ul className="space-y-2.5 text-sm">
-              {navLinks.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    href={l.href}
-                    className="text-white transition hover:text-primary"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-5">
             <p className="mb-4 text-xs uppercase tracking-[0.24em] text-white/55">
               Reach Us
             </p>
@@ -117,6 +94,10 @@ export default function Footer() {
         <div className="flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-8 text-xs text-white/55 sm:flex-row sm:items-center">
           <p>© {year} Aura Pixel Studio. All Rights Reserved.</p>
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <Link href="/rsvp" className="transition hover:text-white">
+              RSVP
+            </Link>
+            <span className="text-white/30">·</span>
             <Link href="#" className="transition hover:text-white">
               Privacy Policy
             </Link>
@@ -124,6 +105,8 @@ export default function Footer() {
             <Link href="#" className="transition hover:text-white">
               Terms of Service
             </Link>
+            <span className="text-white/30">·</span>
+            <span className="text-white/40">{version}</span>
           </p>
         </div>
       </div>
