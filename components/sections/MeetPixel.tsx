@@ -40,7 +40,16 @@ export default function MeetPixel() {
       <SectionMarquee text="Meet Pixel" />
 
       <div className="mx-auto w-full max-w-7xl px-6 pb-24 lg:px-16 lg:pb-32">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm sm:p-12 lg:p-16">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/15 blur-3xl"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-[#1F3B70]/30 blur-3xl"
+          />
+          <div className="relative grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left — copy + capability bullets */}
           <div className="lg:col-span-7">
             <p className="text-xs uppercase tracking-[0.24em] text-primary">
@@ -126,6 +135,7 @@ export default function MeetPixel() {
             <p className="text-center text-[11px] uppercase tracking-[0.18em] text-white/55">
               Always on. Always learning. Always free to chat.
             </p>
+          </div>
           </div>
         </div>
       </div>
