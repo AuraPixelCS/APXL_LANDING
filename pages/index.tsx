@@ -11,6 +11,7 @@ import Services from "@/components/sections/Services";
 import AIAnalytics from "@/components/sections/AIAnalytics";
 import Testimonials from "@/components/sections/Testimonials";
 import MeetPixel from "@/components/sections/MeetPixel";
+import ScanLine from "@/components/ScanLine";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
 export default function Home() {
@@ -45,9 +46,10 @@ export default function Home() {
         </div>
         <Services />
         <AIAnalytics />
-        <div className="-mt-24 lg:-mt-32">
-          <Testimonials />
+        <div className="relative h-px">
+          <ScanLine />
         </div>
+        <Testimonials />
         <MeetPixel />
         <ClosingCTA />
       </main>
