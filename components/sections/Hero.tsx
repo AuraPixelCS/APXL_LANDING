@@ -15,7 +15,7 @@ import Aurora from "@/components/Aurora";
 const HEADLINE = [
   { kind: "filled", text: "Born from" },
   { kind: "stroked", text: "passion" },
-  { kind: "stroked", text: "built for impact" },
+  { kind: "filled", text: "built for impact" },
 ] as const;
 
 const LEFT_RAIL = [

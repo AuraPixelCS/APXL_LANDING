@@ -45,10 +45,10 @@ export default function MeetPixel() {
             <p className="text-xs uppercase tracking-[0.24em] text-primary">
               Meet Pixel
             </p>
-            <h2 className="mt-3 font-bungee text-4xl uppercase leading-[0.95] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h2 className="mt-3 text-4xl font-extrabold uppercase leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
               Say Hi to Pixel.
             </h2>
-            <h3 className="mt-2 font-bungee-outline text-3xl uppercase leading-[0.95] tracking-tight text-primary sm:text-4xl lg:text-5xl">
+            <h3 className="mt-2 text-3xl font-extrabold uppercase leading-[1.05] tracking-tight text-primary sm:text-4xl lg:text-5xl">
               Your 24/7 Creative Co-Pilot.
             </h3>
 
