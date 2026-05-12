@@ -1,5 +1,4 @@
 import { Quote } from "lucide-react";
-import { GlowCard } from "@/components/ui/spotlight-card";
 
 const testimonials = [
   {
@@ -80,28 +79,22 @@ export default function Testimonials() {
               className="w-[300px] shrink-0 pr-4 sm:w-[340px] sm:pr-5 lg:w-[400px] lg:pr-6"
               aria-hidden={i >= testimonials.length}
             >
-              <GlowCard
-                glowColor="blue"
-                customSize
-                className="!h-full !p-7 lg:!p-8"
-              >
-                <div className="flex h-full flex-col gap-5">
-                  <Quote className="h-7 w-7 text-primary" strokeWidth={1.5} />
-                  <p className="text-base leading-relaxed text-white">
-                    &ldquo;{t.quote}&rdquo;
+              <div className="flex h-full flex-col gap-5 rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-sm transition duration-300 hover:border-primary/30 hover:bg-white/[0.06] lg:p-8">
+                <Quote className="h-7 w-7 text-primary" strokeWidth={1.5} />
+                <p className="text-base leading-relaxed text-white">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div className="mt-auto border-t border-white/10 pt-5">
+                  <p className="text-sm font-semibold text-white">
+                    {t.author}
                   </p>
-                  <div className="mt-auto border-t border-white/10 pt-5">
-                    <p className="text-sm font-semibold text-white">
-                      {t.author}
+                  {t.location && (
+                    <p className="text-xs uppercase tracking-[0.16em] text-white/55">
+                      {t.location}
                     </p>
-                    {t.location && (
-                      <p className="text-xs uppercase tracking-[0.16em] text-white/55">
-                        {t.location}
-                      </p>
-                    )}
-                  </div>
+                  )}
                 </div>
-              </GlowCard>
+              </div>
             </div>
           ))}
         </div>
