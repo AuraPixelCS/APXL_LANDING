@@ -3,6 +3,8 @@ import type { AppProps } from "next/app";
 import { Bungee, Bungee_Outline, Inter } from "next/font/google";
 import localFont from "next/font/local";
 import CustomCursor from "@/components/CustomCursor";
+import FloatingPixelBubble from "@/components/FloatingPixelBubble";
+import { PixelChatProvider } from "@/components/pixel/PixelChatProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +37,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <div
       className={`${inter.variable} ${bungee.variable} ${bungeeOutline.variable} ${fullpack.variable} font-sans`}
     >
-      <Component {...pageProps} />
+      <PixelChatProvider>
+        <Component {...pageProps} />
+        <FloatingPixelBubble />
+      </PixelChatProvider>
       <CustomCursor />
     </div>
   );

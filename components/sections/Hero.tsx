@@ -13,9 +13,9 @@ import {
 } from "@/components/icons/SocialIcons";
 
 const HEADLINE = [
-  { kind: "filled", text: "We are" },
-  { kind: "stroked", text: "fearless" },
-  { kind: "arrow", text: "creative studio" },
+  { kind: "filled", text: "Born from" },
+  { kind: "stroked", text: "passion" },
+  { kind: "arrow", text: "built for impact" },
 ] as const;
 
 const LEFT_RAIL = [
@@ -203,8 +203,8 @@ export default function Hero() {
           className="mt-6 max-w-md md:mt-8"
         >
           <p className="text-[14px] leading-[1.6] text-white/65 md:text-[15px]">
-            Southeast Asia&apos;s most fearless creative studio — built to
-            amplify brands, inspire audiences, and shape culture.
+            A next-generation creative and marketing studio helping brands cut
+            through the noise — and stay there.
           </p>
 
         </motion.div>

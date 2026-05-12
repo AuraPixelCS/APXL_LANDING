@@ -1,13 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import {
-  AnimatePresence,
-  motion,
-  useReducedMotion,
-} from "motion/react";
-import { ArrowUpRight, Send, X } from "lucide-react";
-import SectionMarquee from "@/components/SectionMarquee";
-import { RippleButton } from "@/components/ui/ripple-button";
+import { AnimatePresence, motion } from "motion/react";
+import { Send, X } from "lucide-react";
+import PixelFace from "./PixelFace";
 
 type ChatMsg = { id: number; from: "pixel" | "user"; text: string };
 
@@ -27,79 +22,7 @@ const INITIAL_MESSAGES: ChatMsg[] = [
 const CANNED_REPLY =
   "Thanks for the message! I'm still in training — for now, our team will follow up via email at info@aurapixel.live. ✨";
 
-function PixelFace({ size }: { size: number }) {
-  return (
-    <div
-      style={{ width: size, height: size }}
-      className="relative shrink-0 rounded-[28%] bg-gradient-to-br from-[#6FB4FF] via-primary to-[#1F3B70] shadow-[0_8px_20px_-8px_rgba(61,155,245,0.55)]"
-    >
-      <div className="absolute inset-[6%] rounded-[22%] bg-gradient-to-br from-white/15 via-transparent to-transparent" />
-      <svg
-        viewBox="0 0 100 100"
-        className="absolute inset-0 h-full w-full"
-        aria-hidden
-      >
-        <circle cx="36" cy="44" r="6" fill="#ffffff" />
-        <circle cx="64" cy="44" r="6" fill="#ffffff" />
-        <circle cx="34" cy="42" r="1.6" fill="rgba(0,0,0,0.7)" />
-        <circle cx="62" cy="42" r="1.6" fill="rgba(0,0,0,0.7)" />
-        <path
-          d="M 38 62 Q 50 73 62 62"
-          stroke="#ffffff"
-          strokeWidth="4"
-          strokeLinecap="round"
-          fill="none"
-        />
-      </svg>
-    </div>
-  );
-}
-
-function PixelMock({
-  reduce,
-  onOpen,
-}: {
-  reduce: boolean | null;
-  onOpen: () => void;
-}) {
-  return (
-    <motion.button
-      type="button"
-      onClick={onOpen}
-      aria-label="Talk to Pixel"
-      animate={reduce ? { y: 0 } : { y: [-6, 6, -6] }}
-      transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
-      className="relative outline-none transition-transform hover:scale-[1.03] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-transparent"
-    >
-      <div className="relative h-44 w-44 rounded-[2rem] bg-gradient-to-br from-[#6FB4FF] via-primary to-[#1F3B70] shadow-[0_30px_60px_-20px_rgba(61,155,245,0.55)] sm:h-52 sm:w-52 lg:h-60 lg:w-60">
-        <div className="absolute inset-2 rounded-[1.6rem] bg-gradient-to-br from-white/15 via-transparent to-transparent" />
-        <svg
-          viewBox="0 0 100 100"
-          className="absolute inset-0 h-full w-full"
-          aria-hidden
-        >
-          <circle cx="36" cy="44" r="6" fill="#ffffff" />
-          <circle cx="64" cy="44" r="6" fill="#ffffff" />
-          <circle cx="34" cy="42" r="1.6" fill="rgba(0,0,0,0.7)" />
-          <circle cx="62" cy="42" r="1.6" fill="rgba(0,0,0,0.7)" />
-          <path
-            d="M 38 62 Q 50 73 62 62"
-            stroke="#ffffff"
-            strokeWidth="4"
-            strokeLinecap="round"
-            fill="none"
-          />
-        </svg>
-      </div>
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-6 -bottom-4 h-10 rounded-full bg-primary/25 blur-2xl"
-      />
-    </motion.button>
-  );
-}
-
-function PixelChat({
+export default function PixelChat({
   open,
   onClose,
 }: {
@@ -251,59 +174,5 @@ function PixelChat({
         </motion.div>
       )}
     </AnimatePresence>
-  );
-}
-
-export default function Contact() {
-  const reduce = useReducedMotion();
-  const [chatOpen, setChatOpen] = useState(false);
-
-  return (
-    <section id="contact" className="relative py-24 lg:py-32">
-      <SectionMarquee text="Get in Touch" />
-      <div className="mx-auto max-w-7xl px-6 lg:px-16">
-        <div className="mb-16 max-w-3xl">
-          <h2 className="text-3xl font-extrabold uppercase leading-tight tracking-tight text-white sm:text-5xl">
-            Let&rsquo;s Build Something Great.
-          </h2>
-        </div>
-
-        <div
-          data-cursor="big"
-          className="glass-blue mx-auto max-w-4xl rounded-3xl p-10 lg:p-14"
-        >
-          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
-            <div className="flex justify-center md:col-span-5 md:justify-start">
-              <PixelMock reduce={reduce} onOpen={() => setChatOpen(true)} />
-            </div>
-            <div className="md:col-span-7">
-              <p className="text-xs uppercase tracking-[0.24em] text-primary">
-                Meet Pixel
-              </p>
-              <h3 className="mt-3 text-3xl font-extrabold uppercase leading-tight tracking-tight text-white sm:text-4xl">
-                Got a question? Ask Pixel.
-              </h3>
-              <p className="mt-4 text-base leading-relaxed text-white/70">
-                Pixel is our friendly AI agent — built to answer your questions
-                about Aura Pixel, talk through your goals, and point you to the
-                right next step. No forms, no waiting. Just a conversation.
-              </p>
-              <RippleButton
-                onClick={() => setChatOpen(true)}
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-black transition hover:bg-primary/85"
-              >
-                Talk to Pixel
-                <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
-              </RippleButton>
-              <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-white/40">
-                Pixel is in beta · responses are mocked
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <PixelChat open={chatOpen} onClose={() => setChatOpen(false)} />
-    </section>
   );
 }

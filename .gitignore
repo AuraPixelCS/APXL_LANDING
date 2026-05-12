@@ -62,6 +62,7 @@ Thumbs.db
 
 # Original source docs (kept locally, not in repo)
 website_content.docx
+client.docx
 
 # Claude Code workspace
 .claude/
