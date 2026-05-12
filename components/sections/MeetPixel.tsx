@@ -99,7 +99,12 @@ export default function MeetPixel() {
             data-cursor="big"
             className="flex flex-col items-center gap-6 lg:col-span-5"
           >
-            <PixelMock reduce={reduce} onOpen={open} size="large" />
+            <PixelMock
+              reduce={reduce}
+              onOpen={open}
+              size="large"
+              eyesFollowCursor
+            />
             <RippleButton
               onClick={open}
               className="mt-2 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-black transition hover:bg-primary/85"
