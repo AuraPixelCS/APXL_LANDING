@@ -70,7 +70,7 @@ export default function Testimonials() {
       </div>
 
       {/* Horizontal marquee — full-bleed, two duplicated runs for seamless loop */}
-      <div className="overflow-hidden">
+      <div className="overflow-x-clip py-4">
         <div
           className="flex w-max animate-marquee"
           style={{ animationDuration: "60s" }}
