@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const RSVP_ORIGIN = "https://aurapixel-rsvp.vercel.app";
+const RSVP_ORIGIN = "https://apxl-rsvp.vercel.app";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
