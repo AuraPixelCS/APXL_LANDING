@@ -3,7 +3,7 @@ import { RippleButton } from "@/components/ui/ripple-button";
 
 export default function ClosingCTA() {
   return (
-    <section id="contact" className="relative py-32 lg:py-40">
+    <section id="contact" className="relative pb-32 pt-8 lg:pb-40 lg:pt-12">
       <div className="mx-auto w-full max-w-5xl px-6 text-center lg:px-16">
         <h2 className="font-bungee text-[clamp(2.25rem,7vw,5rem)] uppercase leading-[0.95] tracking-[-0.02em] text-white">
           Let&rsquo;s Build Something{" "}

@@ -39,7 +39,7 @@ export default function MeetPixel() {
     <section id="meet-pixel" className="relative">
       <SectionMarquee text="Meet Pixel" />
 
-      <div className="mx-auto w-full max-w-7xl px-6 pb-24 lg:px-16 lg:pb-32">
+      <div className="mx-auto w-full max-w-7xl px-6 pb-12 lg:px-16 lg:pb-16">
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm sm:p-12 lg:p-16">
           <div
             aria-hidden
