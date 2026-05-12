@@ -56,15 +56,14 @@ export default function WhyUs() {
           {CARDS.map(({ Icon, tag, headline, body }, i) => (
             <motion.div
               key={tag}
-              initial={{ opacity: 0, y: 32, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{
                 duration: 0.7,
-                delay: i * 0.12,
+                delay: i * 0.15,
                 ease: CARD_EASE,
               }}
-              whileHover={{ y: -6, transition: { duration: 0.25 } }}
               className="h-full"
             >
               <GlowCard

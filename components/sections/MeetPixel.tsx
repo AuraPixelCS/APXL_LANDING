@@ -73,15 +73,14 @@ export default function MeetPixel() {
               {CAPABILITIES.map(({ Icon, title, body }, i) => (
                 <motion.li
                   key={title}
-                  initial={{ opacity: 0, y: 28, scale: 0.96 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{
                     duration: 0.6,
-                    delay: i * 0.1,
+                    delay: i * 0.12,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
                   className="h-full"
                 >
                   <GlowCard
