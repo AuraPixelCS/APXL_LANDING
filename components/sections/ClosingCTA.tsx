@@ -6,8 +6,8 @@ export default function ClosingCTA() {
     <section id="contact" className="relative pb-32 pt-8 lg:pb-40 lg:pt-12">
       <div className="mx-auto w-full max-w-5xl px-6 text-center lg:px-16">
         <h2 className="font-bungee text-[clamp(2.25rem,7vw,5rem)] uppercase leading-[0.95] tracking-[-0.02em] text-white">
-          Let&rsquo;s Build Something{" "}
-          <span className="font-bungee-outline text-primary">
+          <span className="block">Let&rsquo;s Build Something</span>
+          <span className="block font-bungee-outline text-primary">
             Worth Watching.
           </span>
         </h2>
