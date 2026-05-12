@@ -1,5 +1,6 @@
 import { Zap, Lightbulb, CheckCircle2 } from "lucide-react";
 import SectionMarquee from "@/components/SectionMarquee";
+import { GlowCard } from "@/components/ui/spotlight-card";
 
 type WhyCard = {
   Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
@@ -49,22 +50,25 @@ export default function WhyUs() {
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
           {CARDS.map(({ Icon, tag, headline, body }) => (
-            <div
+            <GlowCard
               key={tag}
-              data-cursor="medium"
-              className="group flex flex-col gap-5 rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-white/[0.05] lg:p-8"
+              glowColor="blue"
+              customSize
+              className="!p-7 lg:!p-8"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-inset ring-primary/30">
-                <Icon className="h-6 w-6" strokeWidth={1.75} />
+              <div data-cursor="medium" className="flex h-full flex-col gap-5">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-inset ring-primary/30">
+                  <Icon className="h-6 w-6" strokeWidth={1.75} />
+                </div>
+                <p className="text-xs uppercase tracking-[0.24em] text-primary">
+                  {tag}
+                </p>
+                <h3 className="text-xl font-extrabold uppercase leading-tight tracking-tight text-white lg:text-2xl">
+                  {headline}
+                </h3>
+                <p className="text-sm leading-relaxed text-white/70">{body}</p>
               </div>
-              <p className="text-xs uppercase tracking-[0.24em] text-primary">
-                {tag}
-              </p>
-              <h3 className="font-bungee text-xl uppercase leading-tight tracking-tight text-white lg:text-2xl">
-                {headline}
-              </h3>
-              <p className="text-sm leading-relaxed text-white/70">{body}</p>
-            </div>
+            </GlowCard>
           ))}
         </div>
       </div>

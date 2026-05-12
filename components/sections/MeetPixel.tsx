@@ -5,6 +5,7 @@ import SectionMarquee from "@/components/SectionMarquee";
 import { RippleButton } from "@/components/ui/ripple-button";
 import PixelMock from "@/components/pixel/PixelMock";
 import { usePixelChat } from "@/components/pixel/PixelChatProvider";
+import { GlowCard } from "@/components/ui/spotlight-card";
 
 type Capability = {
   Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
@@ -70,17 +71,20 @@ export default function MeetPixel() {
             </p>
             <ul className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3">
               {CAPABILITIES.map(({ Icon, title, body }) => (
-                <li
-                  key={title}
-                  className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-5"
-                >
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/15 text-primary ring-1 ring-inset ring-primary/30">
-                    <Icon className="h-4 w-4" strokeWidth={1.75} />
-                  </div>
-                  <p className="text-sm font-semibold text-white">{title}</p>
-                  <p className="text-sm leading-relaxed text-white/65">
-                    {body}
-                  </p>
+                <li key={title}>
+                  <GlowCard glowColor="blue" customSize className="!p-5">
+                    <div className="flex h-full flex-col gap-3">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/15 text-primary ring-1 ring-inset ring-primary/30">
+                        <Icon className="h-4 w-4" strokeWidth={1.75} />
+                      </div>
+                      <p className="text-sm font-semibold text-white">
+                        {title}
+                      </p>
+                      <p className="text-sm leading-relaxed text-white/65">
+                        {body}
+                      </p>
+                    </div>
+                  </GlowCard>
                 </li>
               ))}
             </ul>

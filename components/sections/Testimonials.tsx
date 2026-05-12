@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import { GlowCard } from "@/components/ui/spotlight-card";
 
 const testimonials = [
   {
@@ -79,22 +80,28 @@ export default function Testimonials() {
               className="w-[300px] shrink-0 pr-4 sm:w-[340px] sm:pr-5 lg:w-[400px] lg:pr-6"
               aria-hidden={i >= testimonials.length}
             >
-              <div className="glass flex h-full flex-col gap-5 rounded-2xl p-7 lg:p-8">
-                <Quote className="h-7 w-7 text-primary" strokeWidth={1.5} />
-                <p className="text-base leading-relaxed text-white">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div className="mt-auto border-t border-white/10 pt-5">
-                  <p className="text-sm font-semibold text-white">
-                    {t.author}
+              <GlowCard
+                glowColor="blue"
+                customSize
+                className="!h-full !p-7 lg:!p-8"
+              >
+                <div className="flex h-full flex-col gap-5">
+                  <Quote className="h-7 w-7 text-primary" strokeWidth={1.5} />
+                  <p className="text-base leading-relaxed text-white">
+                    &ldquo;{t.quote}&rdquo;
                   </p>
-                  {t.location && (
-                    <p className="text-xs uppercase tracking-[0.16em] text-white/55">
-                      {t.location}
+                  <div className="mt-auto border-t border-white/10 pt-5">
+                    <p className="text-sm font-semibold text-white">
+                      {t.author}
                     </p>
-                  )}
+                    {t.location && (
+                      <p className="text-xs uppercase tracking-[0.16em] text-white/55">
+                        {t.location}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </GlowCard>
             </div>
           ))}
         </div>

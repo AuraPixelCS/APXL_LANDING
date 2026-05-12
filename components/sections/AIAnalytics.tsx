@@ -1,5 +1,6 @@
 import { Brain, Smile, Users, TrendingUp } from "lucide-react";
 import ScanLine from "@/components/ScanLine";
+import { GlowCard } from "@/components/ui/spotlight-card";
 
 type Feature = {
   Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
@@ -58,19 +59,22 @@ export default function AIAnalytics() {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4 xl:gap-6">
           {FEATURES.map(({ Icon, title, body }) => (
-            <div
+            <GlowCard
               key={title}
-              data-cursor="medium"
-              className="group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-white/[0.05]"
+              glowColor="blue"
+              customSize
+              className="!p-6"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15 text-primary ring-1 ring-inset ring-primary/30">
-                <Icon className="h-5 w-5" strokeWidth={1.75} />
+              <div data-cursor="medium" className="flex h-full flex-col gap-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15 text-primary ring-1 ring-inset ring-primary/30">
+                  <Icon className="h-5 w-5" strokeWidth={1.75} />
+                </div>
+                <h3 className="text-base font-semibold leading-tight text-white">
+                  {title}
+                </h3>
+                <p className="text-sm leading-relaxed text-white/65">{body}</p>
               </div>
-              <h3 className="text-base font-semibold leading-tight text-white">
-                {title}
-              </h3>
-              <p className="text-sm leading-relaxed text-white/65">{body}</p>
-            </div>
+            </GlowCard>
           ))}
         </div>
       </div>
