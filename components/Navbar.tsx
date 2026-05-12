@@ -224,14 +224,15 @@ export default function Navbar() {
                     >
                       <span
                         data-cursor="big"
-                        className="inline-flex items-center gap-5 md:gap-8"
+                        className="font-mono text-[10px] text-primary md:text-xs"
                       >
-                        <span className="font-mono text-[10px] text-primary md:text-xs">
-                          {l.num}
-                        </span>
-                        <span className="font-sans text-[clamp(1.35rem,3.6vw,2.5rem)] font-black uppercase leading-none tracking-tight text-white transition-colors group-hover:text-primary">
-                          {l.label}
-                        </span>
+                        {l.num}
+                      </span>
+                      <span
+                        data-cursor="big"
+                        className="font-sans text-[clamp(1.35rem,3.6vw,2.5rem)] font-black uppercase leading-none tracking-tight text-white transition-colors group-hover:text-primary"
+                      >
+                        {l.label}
                       </span>
                       <span
                         aria-hidden
