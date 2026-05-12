@@ -17,7 +17,7 @@ export default function ClosingCTA() {
           is ready to bring your story to life.
         </p>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
+        <div className="mt-10 flex justify-center">
           <RippleButton
             href="mailto:info@aurapixel.live"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-black transition hover:bg-primary/85"
@@ -25,13 +25,6 @@ export default function ClosingCTA() {
             Start a Project
             <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
           </RippleButton>
-          <a
-            href="#about"
-            data-cursor="medium"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-primary/40 hover:text-primary"
-          >
-            See Our Work
-          </a>
         </div>
 
         <p className="mt-12 text-xs uppercase tracking-[0.24em] text-white/45">
