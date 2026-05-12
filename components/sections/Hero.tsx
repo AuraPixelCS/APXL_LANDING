@@ -10,6 +10,7 @@ import {
   FacebookIcon,
   InstagramIcon,
 } from "@/components/icons/SocialIcons";
+import HeroAurora from "@/components/HeroAurora";
 
 const HEADLINE = [
   { kind: "filled", text: "Born from" },
@@ -74,6 +75,8 @@ export default function Hero() {
       id="home"
       className="relative isolate flex h-[100svh] w-full flex-col overflow-hidden bg-black"
     >
+      <HeroAurora />
+
       {/* Vertical hairlines (lg+) */}
       <div
         aria-hidden
