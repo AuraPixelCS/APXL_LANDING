@@ -15,7 +15,7 @@ import Aurora from "@/components/Aurora";
 const HEADLINE = [
   { kind: "filled", text: "Born from" },
   { kind: "stroked", text: "passion" },
-  { kind: "stroked", text: "built for impact" },
+  { kind: "mixed", filled: "built for", stroked: "impact" },
 ] as const;
 
 const LEFT_RAIL = [
@@ -194,6 +194,14 @@ export default function Hero() {
                 <span className="font-bungee-outline text-primary">
                   {line.text}
                 </span>
+              )}
+              {line.kind === "mixed" && (
+                <>
+                  {line.filled}{" "}
+                  <span className="font-bungee-outline text-primary">
+                    {line.stroked}
+                  </span>
+                </>
               )}
             </motion.span>
           ))}
