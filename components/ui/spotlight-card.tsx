@@ -11,7 +11,7 @@ interface GlowCardProps {
 }
 
 const glowColorMap = {
-  blue: { base: 220, spread: 200 },
+  blue: { base: 210, spread: 25 },
   purple: { base: 280, spread: 300 },
   green: { base: 120, spread: 200 },
   red: { base: 0, spread: 200 },
@@ -66,7 +66,7 @@ const GlowCard: React.FC<GlowCardProps> = ({
     const baseStyles: React.CSSProperties & Record<string, string | number> = {
       '--base': base,
       '--spread': spread,
-      '--radius': '14',
+      '--radius': '24',
       '--border': '3',
       '--backdrop': 'hsl(0 0% 60% / 0.12)',
       '--backup-border': 'var(--backdrop)',
@@ -166,13 +166,13 @@ const GlowCard: React.FC<GlowCardProps> = ({
         className={`
           ${getSizeClasses()}
           ${!customSize ? 'aspect-[3/4]' : ''}
-          rounded-2xl 
-          relative 
-          grid 
-          grid-rows-[1fr_auto] 
-          shadow-[0_1rem_2rem_-1rem_black] 
-          p-4 
-          gap-4 
+          rounded-3xl
+          relative
+          grid
+          grid-rows-[1fr_auto]
+          shadow-[0_1rem_2rem_-1rem_black]
+          p-4
+          gap-4
           backdrop-blur-[5px]
           ${className}
         `}

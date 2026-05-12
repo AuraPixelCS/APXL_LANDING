@@ -54,7 +54,7 @@ export default function WhyUs() {
               key={tag}
               glowColor="blue"
               customSize
-              className="!p-7 lg:!p-8"
+              className="!h-full !p-7 lg:!p-8"
             >
               <div data-cursor="medium" className="flex h-full flex-col gap-5">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-inset ring-primary/30">

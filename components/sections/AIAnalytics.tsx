@@ -63,7 +63,7 @@ export default function AIAnalytics() {
               key={title}
               glowColor="blue"
               customSize
-              className="!p-6"
+              className="!h-full !p-6"
             >
               <div data-cursor="medium" className="flex h-full flex-col gap-4">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15 text-primary ring-1 ring-inset ring-primary/30">

@@ -71,8 +71,12 @@ export default function MeetPixel() {
             </p>
             <ul className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3">
               {CAPABILITIES.map(({ Icon, title, body }) => (
-                <li key={title}>
-                  <GlowCard glowColor="blue" customSize className="!p-5">
+                <li key={title} className="h-full">
+                  <GlowCard
+                    glowColor="blue"
+                    customSize
+                    className="!h-full !p-5"
+                  >
                     <div className="flex h-full flex-col gap-3">
                       <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/15 text-primary ring-1 ring-inset ring-primary/30">
                         <Icon className="h-4 w-4" strokeWidth={1.75} />
