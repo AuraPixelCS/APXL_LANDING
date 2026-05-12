@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import { useEffect, useRef, type MouseEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { RippleButton } from "@/components/ui/ripple-button";
+import { usePixelChat } from "@/components/pixel/PixelChatProvider";
 
 const services = [
   { title: "Digital Marketing Solution", image: "/digitalmarketing.jpg" },
@@ -107,6 +109,7 @@ function ServiceRow({ service, index }: { service: Service; index: number }) {
 }
 
 export default function Services() {
+  const { open } = usePixelChat();
   return (
     <section
       id="services"
@@ -127,10 +130,10 @@ export default function Services() {
               End-to-end. No excuses.
             </p>
             <RippleButton
-              href="#contact"
+              onClick={open}
               className="mt-10 inline-flex items-center gap-3 rounded-full border border-white/20 px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:border-primary hover:text-primary"
             >
-              Get a Free Consultation
+              Talk to Pixel
               <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
             </RippleButton>
           </div>
