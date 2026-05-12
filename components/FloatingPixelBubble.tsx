@@ -11,6 +11,19 @@ export default function FloatingPixelBubble() {
   const { open, isOpen } = usePixelChat();
   const [showTooltip, setShowTooltip] = useState(false);
   const [heroPast, setHeroPast] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
+
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const sync = () => setNavOpen(document.body.classList.contains("nav-open"));
+    sync();
+    const observer = new MutationObserver(sync);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -48,7 +61,7 @@ export default function FloatingPixelBubble() {
     open();
   };
 
-  const showBubble = heroPast && !isOpen;
+  const showBubble = heroPast && !isOpen && !navOpen;
 
   return (
     <div className="pointer-events-none fixed bottom-6 right-6 z-[60] hidden md:block">

@@ -40,12 +40,14 @@ export default function Navbar() {
       if (e.key === "Escape") setOpen(false);
     };
     document.body.style.overflow = "hidden";
+    document.body.classList.add("nav-open");
     window.addEventListener("keydown", onKey);
     const firstLink =
       drawerRef.current?.querySelector<HTMLAnchorElement>("a[href^='#']");
     firstLink?.focus({ preventScroll: true });
     return () => {
       document.body.style.overflow = "";
+      document.body.classList.remove("nav-open");
       window.removeEventListener("keydown", onKey);
       triggerRef.current?.focus({ preventScroll: true });
     };
@@ -218,14 +220,18 @@ export default function Navbar() {
                     <Link
                       href={l.href}
                       onClick={close}
-                      data-cursor="big"
                       className="flex items-center gap-5 py-2.5 transition-colors md:gap-8 md:py-3"
                     >
-                      <span className="font-mono text-[10px] text-primary md:text-xs">
-                        {l.num}
-                      </span>
-                      <span className="font-sans text-[clamp(1.35rem,3.6vw,2.5rem)] font-black uppercase leading-none tracking-tight text-white transition-colors group-hover:text-primary">
-                        {l.label}
+                      <span
+                        data-cursor="big"
+                        className="inline-flex items-center gap-5 md:gap-8"
+                      >
+                        <span className="font-mono text-[10px] text-primary md:text-xs">
+                          {l.num}
+                        </span>
+                        <span className="font-sans text-[clamp(1.35rem,3.6vw,2.5rem)] font-black uppercase leading-none tracking-tight text-white transition-colors group-hover:text-primary">
+                          {l.label}
+                        </span>
                       </span>
                       <span
                         aria-hidden
