@@ -189,13 +189,12 @@ export default function Hero() {
           initial={lineFrom}
           animate={lineTo}
           transition={{ duration: 0.75, delay: 0.55, ease: EASE_OUT }}
-          className="mt-6 max-w-md md:mt-8"
+          className="mt-8 max-w-lg pl-1 md:mt-10 lg:max-w-xl"
         >
-          <p className="text-[14px] leading-[1.6] text-white/65 md:text-[15px]">
+          <p className="text-[15px] leading-[1.6] text-white/70 md:text-base lg:text-lg">
             A next-generation creative and marketing studio helping brands cut
             through the noise — and stay there.
           </p>
-
         </motion.div>
       </div>
 
