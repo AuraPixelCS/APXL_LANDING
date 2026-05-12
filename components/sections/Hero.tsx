@@ -6,7 +6,6 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -15,7 +14,7 @@ import {
 const HEADLINE = [
   { kind: "filled", text: "Born from" },
   { kind: "stroked", text: "passion" },
-  { kind: "arrow", text: "built for impact" },
+  { kind: "stroked", text: "built for impact" },
 ] as const;
 
 const LEFT_RAIL = [
@@ -180,16 +179,6 @@ export default function Hero() {
               {line.kind === "stroked" && (
                 <span className="font-bungee-outline text-primary">
                   {line.text}
-                </span>
-              )}
-              {line.kind === "arrow" && (
-                <span className="inline-flex items-center gap-2 align-baseline md:gap-4">
-                  <ArrowUpRight
-                    aria-hidden
-                    strokeWidth={1.5}
-                    className="h-[0.55em] w-[0.55em] text-primary"
-                  />
-                  <span>{line.text}</span>
                 </span>
               )}
             </motion.span>
