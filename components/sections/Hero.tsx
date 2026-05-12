@@ -10,7 +10,7 @@ import {
   FacebookIcon,
   InstagramIcon,
 } from "@/components/icons/SocialIcons";
-import HeroAurora from "@/components/HeroAurora";
+import Aurora from "@/components/Aurora";
 
 const HEADLINE = [
   { kind: "filled", text: "Born from" },
@@ -75,7 +75,18 @@ export default function Hero() {
       id="home"
       className="relative isolate flex h-[100svh] w-full flex-col overflow-hidden bg-black"
     >
-      <HeroAurora />
+      {/* Aurora background — react-bits, brand blue */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 opacity-70"
+      >
+        <Aurora
+          colorStops={["#1F3B70", "#3D9BF5", "#6FB4FF"]}
+          amplitude={0.9}
+          blend={0.45}
+          speed={0.6}
+        />
+      </div>
 
       {/* Vertical hairlines (lg+) */}
       <div
