@@ -10,7 +10,6 @@ import SectionMarquee from "@/components/SectionMarquee";
 import Services from "@/components/sections/Services";
 import AIAnalytics from "@/components/sections/AIAnalytics";
 import Testimonials from "@/components/sections/Testimonials";
-import TrustedBy from "@/components/sections/TrustedBy";
 import MeetPixel from "@/components/sections/MeetPixel";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
@@ -49,7 +48,6 @@ export default function Home() {
         <div className="-mt-24 lg:-mt-32">
           <Testimonials />
         </div>
-        <TrustedBy />
         <MeetPixel />
         <ClosingCTA />
       </main>
