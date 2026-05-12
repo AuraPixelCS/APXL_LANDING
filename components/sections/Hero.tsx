@@ -110,17 +110,17 @@ export default function Hero() {
         animate={{ scale: 1 }}
         transition={{ duration: 1.4, delay: 0.1, ease: EASE_OUT }}
       >
-        <div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[540px] lg:w-[540px] xl:h-[620px] xl:w-[620px]">
+        <div className="relative z-[3] h-[300px] w-[300px] overflow-hidden rounded-full bg-black shadow-[0_30px_90px_-30px_rgba(0,0,0,0.9)] md:h-[400px] md:w-[400px] lg:h-[540px] lg:w-[540px] xl:h-[620px] xl:w-[620px]">
           <Image
             src="/xpovio/hero/banner-team.png"
             alt=""
             fill
             sizes="(min-width:1280px) 620px, (min-width:1024px) 540px, (min-width:768px) 400px, 300px"
-            className="rounded-full object-cover [filter:brightness(0.78)_contrast(1.05)]"
+            className="object-cover [filter:brightness(1)_contrast(1.05)_saturate(1.05)]"
             priority
           />
-          {/* Aura blue inner glow */}
-          <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-primary/25 [box-shadow:inset_0_0_140px_rgba(61,155,245,0.28)]" />
+          {/* Soft brand-blue rim — no inner darkening */}
+          <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-primary/25 [box-shadow:inset_0_0_120px_rgba(61,155,245,0.18)]" />
         </div>
       </motion.div>
 
