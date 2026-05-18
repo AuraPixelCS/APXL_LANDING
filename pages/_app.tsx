@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import CustomCursor from "@/components/CustomCursor";
 import FloatingPixelBubble from "@/components/FloatingPixelBubble";
 import { PixelChatProvider } from "@/components/pixel/PixelChatProvider";
+import Chateleon from "@/components/Chateleon";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <FloatingPixelBubble />
       </PixelChatProvider>
       <CustomCursor />
+      <Chateleon />
     </div>
   );
 }
