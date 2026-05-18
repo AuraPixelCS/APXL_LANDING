@@ -3,7 +3,6 @@ import type { AppProps } from "next/app";
 import { Bungee, Bungee_Outline, Inter } from "next/font/google";
 import localFont from "next/font/local";
 import CustomCursor from "@/components/CustomCursor";
-import FloatingPixelBubble from "@/components/FloatingPixelBubble";
 import { PixelChatProvider } from "@/components/pixel/PixelChatProvider";
 import Chateleon from "@/components/Chateleon";
 
@@ -40,7 +39,6 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <PixelChatProvider>
         <Component {...pageProps} />
-        <FloatingPixelBubble />
       </PixelChatProvider>
       <CustomCursor />
       <Chateleon />
