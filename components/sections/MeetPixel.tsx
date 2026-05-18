@@ -3,7 +3,8 @@ import { motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight, BarChart3, MessageCircle, Rocket } from "lucide-react";
 import SectionMarquee from "@/components/SectionMarquee";
 import { RippleButton } from "@/components/ui/ripple-button";
-import { usePixelChat } from "@/components/pixel/PixelChatProvider";
+import PixelMock from "@/components/pixel/PixelMock";
+import { openChateleon } from "@/components/Chateleon";
 import { GlowCard } from "@/components/ui/spotlight-card";
 
 type Capability = {
@@ -32,7 +33,6 @@ const CAPABILITIES: Capability[] = [
 
 export default function MeetPixel() {
   const reduce = useReducedMotion();
-  const { open } = usePixelChat();
 
   return (
     <section id="meet-pixel" className="relative">
@@ -113,31 +113,19 @@ export default function MeetPixel() {
             </ul>
           </div>
 
-          {/* Right — Chateleon mascot + CTA */}
+          {/* Right — Pixel mascot + CTA (opens Chateleon) */}
           <div
             data-cursor="big"
             className="flex flex-col items-center gap-6 lg:col-span-5"
           >
-            <motion.button
-              type="button"
-              onClick={open}
-              aria-label="Talk to Pixel"
-              animate={reduce ? { y: 0 } : { y: [-6, 6, -6] }}
-              transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative outline-none transition-transform hover:scale-[1.03] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-transparent"
-            >
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-x-6 -bottom-4 h-10 rounded-full bg-primary/25 blur-2xl"
-              />
-              <img
-                src="/chateleon-mascot.png"
-                alt="Pixel mascot"
-                className="relative h-56 w-56 object-contain drop-shadow-[0_30px_60px_rgba(61,155,245,0.35)] sm:h-64 sm:w-64 lg:h-72 lg:w-72"
-              />
-            </motion.button>
+            <PixelMock
+              reduce={reduce}
+              onOpen={openChateleon}
+              size="large"
+              eyesFollowCursor
+            />
             <RippleButton
-              onClick={open}
+              onClick={openChateleon}
               className="mt-2 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-black transition hover:bg-primary/85"
             >
               Talk to Pixel

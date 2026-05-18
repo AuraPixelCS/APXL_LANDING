@@ -8,8 +8,40 @@ const CHATELEON_SDK_SRC = "https://cdn.chateleon.com/sdk/sdk.min.v0.0.1.js";
 declare global {
   interface Window {
     chateleonObject?: string;
-    chateleon?: (config: { apiId: string; event: string }) => void;
+    chateleon?: (config: { apiId?: string; event: string }) => void;
   }
+}
+
+export function openChateleon() {
+  if (typeof window === "undefined") return;
+
+  if (typeof window.chateleon === "function") {
+    try {
+      window.chateleon({ apiId: CHATELEON_API_ID, event: "open" });
+      return;
+    } catch {
+      // fall through to DOM click fallback
+    }
+  }
+
+  const selectors = [
+    "[data-chateleon-launcher]",
+    '[id^="chateleon-launcher"]',
+    '[id*="chateleon"][role="button"]',
+    '[class*="chateleon-launcher"]',
+    '[class*="chateleon-bubble"]',
+    "#chateleon-widget button",
+  ];
+
+  for (const sel of selectors) {
+    const el = document.querySelector<HTMLElement>(sel);
+    if (el) {
+      el.click();
+      return;
+    }
+  }
+
+  console.warn("[Chateleon] launcher not found — widget may still be loading");
 }
 
 export default function Chateleon() {
