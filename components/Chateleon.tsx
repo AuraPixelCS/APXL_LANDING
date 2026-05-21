@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const CHATELEON_API_ID = "chl_HxVPi1H0TcU3qUuvERgrwbYSNpiWy_hnUemNFrps4iU";
+const CHATELEON_API_ID = "chl_D1ak2ujjzkr1r4WiCgBSLEknLeJ1bu-Oiof49do32vo";
 const CHATELEON_SDK_SRC = "https://cdn.chateleon.com/sdk/sdk.min.v0.0.1.js";
 
 declare global {
