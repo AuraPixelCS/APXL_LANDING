@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Aura Pixel — Born from Passion. Built for Impact.</title>
+        <title>AuraPixel</title>
         <meta
           name="description"
           content="Aura Pixel — A next-generation creative and marketing studio in Kuala Lumpur, helping brands cut through the noise and stay there."
