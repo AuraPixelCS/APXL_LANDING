@@ -35,9 +35,9 @@ export default function Footer() {
               <img
                 src="/ap-logo.png"
                 alt="Aura Pixel"
-                width={1920}
-                height={1080}
-                className="block h-auto w-[180px] [filter:brightness(0)_invert(1)]"
+                width={2744}
+                height={2744}
+                className="block h-auto w-[200px]"
               />
             </Link>
             <p className="mt-6 max-w-md text-base leading-relaxed text-white/70">

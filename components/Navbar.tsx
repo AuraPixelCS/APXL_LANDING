@@ -25,9 +25,9 @@ export default function Navbar() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/ap-logo.png"
+            src="/aurapixel-tight.png"
             alt="Aura Pixel"
-            className="h-auto w-[88px] origin-bottom-left scale-[1.7] sm:w-[104px] sm:scale-[1.9] lg:scale-[2.2] [filter:brightness(0)_invert(1)]"
+            className="h-auto w-[44px] sm:w-[52px] lg:w-[60px]"
           />
         </Link>
       </nav>
