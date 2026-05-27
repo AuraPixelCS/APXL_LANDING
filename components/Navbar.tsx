@@ -17,7 +17,7 @@ export default function Navbar() {
         scrolled ? "bg-black/40 backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex w-full max-w-[100rem] items-center px-6 py-5 lg:px-12 lg:py-6">
+      <nav className="mx-auto flex h-[68px] w-full max-w-[100rem] items-center px-6 lg:h-[88px] lg:px-12">
         <Link
           href="#home"
           aria-label="Aura Pixel home"
@@ -27,7 +27,7 @@ export default function Navbar() {
           <img
             src="/aurapixel-tight.png"
             alt="Aura Pixel"
-            className="h-auto w-[44px] sm:w-[52px] lg:w-[60px]"
+            className="h-auto w-[80px] sm:w-[96px] lg:w-[112px]"
           />
         </Link>
       </nav>
