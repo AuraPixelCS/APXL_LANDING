@@ -27,7 +27,7 @@ export default function Navbar() {
           <img
             src="/aurapixel-tight.png"
             alt="Aura Pixel"
-            className="h-auto w-[80px] sm:w-[96px] lg:w-[112px]"
+            className="h-auto w-[64px] sm:w-[76px] lg:w-[88px]"
           />
         </Link>
       </nav>
