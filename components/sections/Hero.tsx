@@ -6,18 +6,13 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
+import { ArrowRight } from "lucide-react";
 import {
   FacebookIcon,
   InstagramIcon,
 } from "@/components/icons/SocialIcons";
 import Aurora from "@/components/Aurora";
-
-const HEADLINE = [
-  { kind: "filled", text: "Born from" },
-  { kind: "stroked", text: "passion" },
-  { kind: "filled", text: "built for" },
-  { kind: "stroked", text: "impact" },
-] as const;
+import { RippleButton } from "@/components/ui/ripple-button";
 
 const LEFT_RAIL = [
   { label: "info@aurapixel.live", href: "mailto:info@aurapixel.live" },
@@ -38,6 +33,14 @@ const SOCIALS = [
 ];
 
 const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+// filled = white Bungee · stroked = blue Bungee-outline (alternating lines)
+const HEADLINE = [
+  { kind: "filled", text: "Your new brand has a" },
+  { kind: "stroked", text: "launch date" },
+  { kind: "filled", text: "Who’s building the" },
+  { kind: "stroked", text: "marketing?" },
+] as const;
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -105,13 +108,13 @@ export default function Hero() {
       {/* Right-aligned round photo — parallax + scroll-driven scale & fade */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute right-[4%] top-1/2 z-[1] hidden -translate-y-1/2 sm:block lg:right-[6%]"
+        className="pointer-events-none absolute right-[5%] top-1/2 z-[1] hidden -translate-y-1/2 xl:block"
         style={{ y: thumbY, scale: thumbScale, opacity: thumbOpacity }}
         initial={reduce ? { scale: 1 } : { scale: 0.94 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.4, delay: 0.1, ease: EASE_OUT }}
       >
-        <div className="relative z-[3] h-[300px] w-[300px] overflow-hidden rounded-full bg-black shadow-[0_30px_90px_-30px_rgba(0,0,0,0.9)] md:h-[400px] md:w-[400px] lg:h-[540px] lg:w-[540px] xl:h-[620px] xl:w-[620px]">
+        <div className="relative z-[3] h-[500px] w-[500px] overflow-hidden rounded-full bg-black shadow-[0_30px_90px_-30px_rgba(0,0,0,0.9)] 2xl:h-[560px] 2xl:w-[560px]">
           <Image
             src="/xpovio/hero/banner-team.png"
             alt=""
@@ -177,42 +180,46 @@ export default function Hero() {
 
       {/* Main content (top padding clears the fixed Navbar) */}
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6 pt-24 lg:px-12 lg:pt-28">
-        <h1 className="font-bungee uppercase tracking-tight text-white">
+        <motion.h1
+          initial={lineFrom}
+          animate={lineTo}
+          transition={{ duration: 0.8, delay: 0.15, ease: EASE_OUT }}
+          className="max-w-xl font-bungee text-[clamp(1.85rem,6.2vw,3.25rem)] uppercase leading-[1.04] tracking-tight text-white xl:max-w-[640px]"
+        >
           {HEADLINE.map((line, i) => (
-            <motion.span
+            <span
               key={i}
-              initial={lineFrom}
-              animate={lineTo}
-              transition={{
-                duration: 0.75,
-                delay: 0.15 + i * 0.1,
-                ease: EASE_OUT,
-              }}
-              className="block text-[clamp(1.85rem,6.2vw,5rem)] leading-[0.96] tracking-[-0.03em]"
+              className={
+                line.kind === "stroked"
+                  ? "block font-bungee-outline text-primary"
+                  : "block"
+              }
             >
-              {line.kind === "filled" && line.text}
-              {line.kind === "stroked" && (
-                <span className="font-bungee-outline text-primary">
-                  {line.text}
-                </span>
-              )}
-            </motion.span>
+              {line.text}
+            </span>
           ))}
-        </h1>
+        </motion.h1>
 
         <motion.div
           initial={lineFrom}
           animate={lineTo}
-          transition={{ duration: 0.75, delay: 0.55, ease: EASE_OUT }}
-          className="mt-8 max-w-lg pl-1 md:mt-10 lg:max-w-xl"
+          transition={{ duration: 0.8, delay: 0.4, ease: EASE_OUT }}
+          className="mt-9 flex flex-col items-start gap-4"
         >
-          <p className="text-[15px] leading-[1.6] text-white/70 md:text-base lg:text-lg">
-            A next-generation creative and marketing studio helping brands cut
-            through the noise — and stay there.
+          <RippleButton
+            href="#lead-form"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-black transition hover:bg-primary/85"
+          >
+            Get a launch plan
+            <ArrowRight className="h-4 w-4" strokeWidth={2} />
+          </RippleButton>
+          {/* Supporting line — not a heading. Unattributed by design (§1). */}
+          <p className="max-w-md text-xs leading-relaxed text-white/45">
+            Our last brand launch: live in 30 days, 90+ leads in month one,
+            around RM 25 each.
           </p>
         </motion.div>
       </div>
-
     </section>
   );
 }

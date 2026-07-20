@@ -1,7 +1,6 @@
 "use client";
 import { Zap, Lightbulb, CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
-import SectionMarquee from "@/components/SectionMarquee";
 import { GlowCard } from "@/components/ui/spotlight-card";
 
 const CARD_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -24,7 +23,7 @@ const CARDS: WhyCard[] = [
     Icon: Lightbulb,
     tag: "Creative",
     headline: "Ideas That Stop the Scroll",
-    body: "We don't chase trends — we set them. Bold thinking, fresh storytelling, and creativity that makes audiences stop, watch, and remember.",
+    body: "Bold thinking, fresh storytelling, and creativity that makes audiences stop, watch, and remember.",
   },
   {
     Icon: CheckCircle2,
@@ -37,9 +36,7 @@ const CARDS: WhyCard[] = [
 export default function WhyUs() {
   return (
     <section id="why-us" className="relative">
-      <SectionMarquee text="Why Us" />
-
-      <div className="mx-auto w-full max-w-7xl px-6 pb-24 lg:px-16 lg:pb-32">
+      <div className="mx-auto w-full max-w-7xl px-6 py-24 lg:px-16 lg:py-32">
         <div className="mb-12 max-w-3xl lg:mb-16">
           {/* <p className="text-xs uppercase tracking-[0.24em] text-primary">
             Why Us

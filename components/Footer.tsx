@@ -40,8 +40,12 @@ export default function Footer() {
                 className="block h-auto w-[200px]"
               />
             </Link>
+            {/* [HOLD] Open decision #4 — tagline. Three are in circulation;
+                spec recommends "Bold ideas, built to perform." Pending Arvino.
+                Once confirmed, use the same line in the meta title / OG tags
+                and nowhere use the other two. */}
             <p className="mt-6 max-w-md text-base leading-relaxed text-white/70">
-              Crafted with Creativity. Powered by Passion. Built for the Bold.
+              Bold ideas, built to perform.
             </p>
           </div>
 

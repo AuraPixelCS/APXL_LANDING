@@ -5,21 +5,32 @@ const HOVER_SELECTOR =
 const BIG_SELECTOR = 'h1, h2, h3, h4, h5, h6, [data-cursor="big"]';
 
 export default function CustomCursor() {
-  const [mounted, setMounted] = useState(false);
+  const [enabled, setEnabled] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
   const outerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => setMounted(true), []);
+  // Only enable on a fine pointer (mouse/trackpad) with no reduced-motion pref.
+  // On touch there are no mouse events, so the cursor DOM would render parked at
+  // (0,0) — the blue "residue" ring seen at the top-left on phones. Gating the
+  // render on `enabled` means nothing is drawn on touch devices at all.
+  useEffect(() => {
+    const fine = window.matchMedia("(pointer: fine)");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setEnabled(fine.matches && !reduce.matches);
+    update();
+    fine.addEventListener("change", update);
+    reduce.addEventListener("change", update);
+    return () => {
+      fine.removeEventListener("change", update);
+      reduce.removeEventListener("change", update);
+    };
+  }, []);
 
   useEffect(() => {
-    if (!mounted) return;
+    if (!enabled) return;
     if (typeof window === "undefined") return;
-
-    const coarse = window.matchMedia("(pointer: coarse)").matches;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (coarse || reduced) return;
 
     const wrap = wrapRef.current;
     const outer = outerRef.current;
@@ -79,6 +90,7 @@ export default function CustomCursor() {
     };
 
     wrap.dataset.state = "idle";
+    writeFrame(); // start centered, not parked at (0,0)
     window.addEventListener("mousemove", onMove, { passive: true });
     document.addEventListener("mouseover", onOver, true);
     document.documentElement.addEventListener("mouseleave", onLeave);
@@ -91,9 +103,9 @@ export default function CustomCursor() {
       document.documentElement.removeEventListener("mouseleave", onLeave);
       document.documentElement.removeEventListener("mouseenter", onEnter);
     };
-  }, [mounted]);
+  }, [enabled]);
 
-  if (!mounted) return null;
+  if (!enabled) return null;
 
   return (
     <div
