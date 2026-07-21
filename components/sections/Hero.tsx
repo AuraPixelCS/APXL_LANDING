@@ -10,6 +10,7 @@ import { ArrowRight } from "lucide-react";
 import {
   FacebookIcon,
   InstagramIcon,
+  LinkedInIcon,
 } from "@/components/icons/SocialIcons";
 import Aurora from "@/components/Aurora";
 import { RippleButton } from "@/components/ui/ripple-button";
@@ -29,6 +30,11 @@ const SOCIALS = [
     Icon: FacebookIcon,
     label: "Facebook",
     href: "https://www.facebook.com/byaurapixel",
+  },
+  {
+    Icon: LinkedInIcon,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/aura-pixel-creative-studio-sdn-bhd/",
   },
 ];
 

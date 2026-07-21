@@ -3,6 +3,7 @@ import { MapPin, Mail } from "lucide-react";
 import {
   FacebookIcon,
   InstagramIcon,
+  LinkedInIcon,
 } from "@/components/icons/SocialIcons";
 import FooterAurora from "@/components/FooterAurora";
 import packageJson from "../package.json";
@@ -17,6 +18,11 @@ const socials = [
     Icon: FacebookIcon,
     label: "Facebook",
     href: "https://www.facebook.com/byaurapixel",
+  },
+  {
+    Icon: LinkedInIcon,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/aura-pixel-creative-studio-sdn-bhd/",
   },
 ];
 
