@@ -24,7 +24,6 @@ const SECTIONS: LegalSection[] = [
   { id: "who", title: "Who we are" },
   { id: "using", title: "Using the site" },
   { id: "enquiries", title: "Enquiries and proposals" },
-  { id: "fees", title: "Services, fees and payment" },
   { id: "your-obligations", title: "Your responsibilities" },
   { id: "ip", title: "Intellectual property" },
   { id: "results", title: "Results and third-party platforms" },
@@ -127,41 +126,7 @@ export default function Terms() {
         in writing.
       </P>
 
-      <H2 id="fees">5. Services, fees and payment</H2>
-      <P>
-        Scope, deliverables, timelines and fees are set out in the applicable
-        proposal or statement of work. Unless that document says otherwise:
-      </P>
-      <UL>
-        <LI>
-          fees are quoted in Malaysian Ringgit and are{" "}
-          exclusive of applicable taxes, which will be added
-          where chargeable;
-        </LI>
-        <LI>
-          invoices are payable within 14 days of the invoice
-          date;
-        </LI>
-        <LI>
-          we may require a deposit of 50% before work begins,
-          which is non-refundable once work has commenced;
-        </LI>
-        <LI>
-          third-party costs — media and advertising spend, talent fees, venue
-          hire, licensed stock and software subscriptions — are billed
-          separately at cost and are your responsibility;
-        </LI>
-        <LI>
-          we may charge interest of 1.5% per month on overdue
-          amounts, and may suspend work while an invoice remains unpaid;
-        </LI>
-        <LI>
-          retainers are billed monthly in advance, and either party may
-          terminate a retainer on 30 days&rsquo; written notice.
-        </LI>
-      </UL>
-
-      <H2 id="your-obligations">6. Your responsibilities</H2>
+      <H2 id="your-obligations">5. Your responsibilities</H2>
       <P>
         To deliver on time we depend on you. You agree to provide materials,
         approvals, access and feedback promptly, and to nominate a single point
@@ -179,7 +144,7 @@ export default function Terms() {
         </strong>
       </P>
 
-      <H2 id="ip">7. Intellectual property</H2>
+      <H2 id="ip">6. Intellectual property</H2>
       <P>
         All content on the Site — including text, graphics, logos, the AuraPixel
         name and marks, photography, video and code — belongs to us or our
@@ -215,7 +180,7 @@ export default function Terms() {
         before the engagement begins.
       </Callout>
 
-      <H2 id="results">8. Results and third-party platforms</H2>
+      <H2 id="results">7. Results and third-party platforms</H2>
       <P>
         Marketing outcomes depend on factors outside our control, including
         market conditions, your pricing and offer, your sales follow-up, and the
@@ -235,7 +200,7 @@ export default function Terms() {
         outages on those platforms.
       </P>
 
-      <H2 id="events">9. Event registration and passes</H2>
+      <H2 id="events">8. Event registration and passes</H2>
       <P>
         These terms apply where you register for an event through
         aurapixel.live/rsvp:
@@ -291,7 +256,7 @@ export default function Terms() {
         </LI>
       </UL>
 
-      <H2 id="confidentiality">10. Confidentiality</H2>
+      <H2 id="confidentiality">9. Confidentiality</H2>
       <P>
         Each party will keep the other&rsquo;s confidential information
         confidential, use it only for the purposes of the engagement, and
@@ -300,7 +265,7 @@ export default function Terms() {
         already lawfully known, or must be disclosed by law.
       </P>
 
-      <H2 id="privacy">11. Privacy</H2>
+      <H2 id="privacy">10. Privacy</H2>
       <P>
         Our handling of personal data is governed by our{" "}
         <Link
@@ -312,7 +277,7 @@ export default function Terms() {
         , which forms part of these terms.
       </P>
 
-      <H2 id="liability">12. Limitation of liability</H2>
+      <H2 id="liability">11. Limitation of liability</H2>
       <P>
         Nothing in these terms excludes or limits liability for death or
         personal injury caused by negligence, for fraud or fraudulent
@@ -341,7 +306,7 @@ export default function Terms() {
         liability is limited to RM 500.
       </P>
 
-      <H2 id="termination">13. Termination</H2>
+      <H2 id="termination">12. Termination</H2>
       <P>
         Either party may terminate an engagement on 30 days&rsquo;
         written notice, or immediately if the other party commits a material
@@ -351,7 +316,7 @@ export default function Terms() {
         date.
       </P>
 
-      <H2 id="force-majeure">14. Force majeure</H2>
+      <H2 id="force-majeure">13. Force majeure</H2>
       <P>
         Neither party is liable for failure or delay caused by events beyond its
         reasonable control, including natural disaster, epidemic, war, civil
@@ -359,7 +324,7 @@ export default function Terms() {
         failure, or failure of a third-party platform.
       </P>
 
-      <H2 id="general">15. General</H2>
+      <H2 id="general">14. General</H2>
       <P>
         We may update these terms from time to time; the current version is
         always at aurapixel.live/terms. Continued use of the Site after a change
@@ -371,7 +336,7 @@ export default function Terms() {
         enforce these terms.
       </P>
 
-      <H2 id="law">16. Governing law and jurisdiction</H2>
+      <H2 id="law">15. Governing law and jurisdiction</H2>
       <P>
         These terms are governed by the laws of{" "}
         <strong className="text-white">Malaysia</strong>. The parties submit to
@@ -379,7 +344,7 @@ export default function Terms() {
         <strong className="text-white">Kuala Lumpur, Malaysia</strong>.
       </P>
 
-      <H2 id="contact">17. Contact</H2>
+      <H2 id="contact">16. Contact</H2>
       <P>
         <strong className="text-white">
           Aura Pixel Creative Studio Sdn. Bhd.
