@@ -1,8 +1,13 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useRouter();
+  // On the homepage the logo scrolls to the hero; on /privacy and /terms
+  // there is no #home anchor, so it has to navigate back to the site root.
+  const homeHref = pathname === "/" ? "#home" : "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -19,7 +24,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex h-[68px] w-full max-w-[100rem] items-center px-6 lg:h-[88px] lg:px-12">
         <Link
-          href="#home"
+          href={homeHref}
           aria-label="Aura Pixel home"
           className="relative z-[2] inline-block"
         >

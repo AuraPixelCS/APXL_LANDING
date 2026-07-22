@@ -6,7 +6,6 @@ import {
   LinkedInIcon,
 } from "@/components/icons/SocialIcons";
 import FooterAurora from "@/components/FooterAurora";
-import packageJson from "../package.json";
 
 const socials = [
   {
@@ -28,7 +27,6 @@ const socials = [
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const version = `v${packageJson.version.split(".").slice(0, 2).join(".")}`;
 
   return (
     <footer className="relative isolate overflow-hidden border-t border-white/10 bg-black">
@@ -66,7 +64,9 @@ export default function Footer() {
                   strokeWidth={1.75}
                 />
                 <span className="text-white">
-                  Midvalley Boulevard Office, Kuala Lumpur
+                  11-07, The Boulevard Office, Lingkaran Syed Putra,
+                  <br />
+                  Mid Valley City, 59200 Kuala Lumpur
                 </span>
               </li>
               <li className="flex gap-3">
@@ -108,15 +108,13 @@ export default function Footer() {
               RSVP
             </Link>
             <span className="text-white/30">·</span>
-            <Link href="#" className="transition hover:text-white">
+            <Link href="/privacy" className="transition hover:text-white">
               Privacy Policy
             </Link>
             <span className="text-white/30">·</span>
-            <Link href="#" className="transition hover:text-white">
+            <Link href="/terms" className="transition hover:text-white">
               Terms of Service
             </Link>
-            <span className="text-white/30">·</span>
-            <span className="text-white/40">{version}</span>
           </p>
         </div>
       </div>
