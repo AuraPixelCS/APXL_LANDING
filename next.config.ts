@@ -5,7 +5,7 @@ const RSVP_ORIGIN = "https://apxl-rsvp.vercel.app";
 // The Growth Story MY — standalone project in ../growth-story, deployed on its
 // own Vercel project. It sets basePath "/thegrowthstorymy", so the prefix is
 // preserved on both sides of the rewrite and its /_next/* assets resolve.
-const GROWTH_ORIGIN = "https://growth-story-six.vercel.app";
+const GROWTH_ORIGIN = "https://apxl-growth-story.vercel.app";
 
 // PXL Chat — full SaaS app (auth, API routes, embeddable widget) living on its
 // own origin. A redirect, not a rewrite: proxying it under a path would require
