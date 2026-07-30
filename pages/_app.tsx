@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import Script from "next/script";
 import { Bungee, Bungee_Outline, Inter } from "next/font/google";
 import localFont from "next/font/local";
 import CustomCursor from "@/components/CustomCursor";
@@ -40,6 +41,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </PixelChatProvider>
       <CustomCursor />
+      {/* PXL Chat — "Pixel Bot Main", configured in the PXL Chat Studio */}
+      <Script
+        src="https://pxlchat.vercel.app/widget.js"
+        data-bot="pk_live_kel03udbnoft"
+        strategy="lazyOnload"
+      />
     </div>
   );
 }
