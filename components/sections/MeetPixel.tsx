@@ -4,7 +4,7 @@ import { ArrowUpRight, BarChart3, MessageCircle, Rocket } from "lucide-react";
 import SectionMarquee from "@/components/SectionMarquee";
 import { RippleButton } from "@/components/ui/ripple-button";
 import PixelMock from "@/components/pixel/PixelMock";
-import { openChateleon } from "@/components/Chateleon";
+import { usePixelChat } from "@/components/pixel/PixelChatProvider";
 import { GlowCard } from "@/components/ui/spotlight-card";
 
 type Capability = {
@@ -33,6 +33,7 @@ const CAPABILITIES: Capability[] = [
 
 export default function MeetPixel() {
   const reduce = useReducedMotion();
+  const { open: openPixelChat } = usePixelChat();
 
   return (
     <section id="meet-pixel" className="relative">
@@ -113,19 +114,19 @@ export default function MeetPixel() {
             </ul>
           </div>
 
-          {/* Right — Pixel mascot + CTA (opens Chateleon) */}
+          {/* Right — Pixel mascot + CTA (opens the in-house Pixel chat) */}
           <div
             data-cursor="big"
             className="flex flex-col items-center gap-6 lg:col-span-5"
           >
             <PixelMock
               reduce={reduce}
-              onOpen={openChateleon}
+              onOpen={openPixelChat}
               size="large"
               eyesFollowCursor
             />
             <RippleButton
-              onClick={openChateleon}
+              onClick={openPixelChat}
               className="mt-2 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-black transition hover:bg-primary/85"
             >
               Talk to Pixel

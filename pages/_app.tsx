@@ -4,7 +4,6 @@ import { Bungee, Bungee_Outline, Inter } from "next/font/google";
 import localFont from "next/font/local";
 import CustomCursor from "@/components/CustomCursor";
 import { PixelChatProvider } from "@/components/pixel/PixelChatProvider";
-import Chateleon from "@/components/Chateleon";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,7 +40,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </PixelChatProvider>
       <CustomCursor />
-      <Chateleon />
     </div>
   );
 }
