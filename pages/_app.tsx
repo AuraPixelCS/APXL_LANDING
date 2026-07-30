@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Script
         src="https://pxlchat.vercel.app/widget.js"
         data-bot="pk_live_kel03udbnoft"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
     </div>
   );
