@@ -8,24 +8,20 @@ const RSVP_ORIGIN = "https://apxl-rsvp.vercel.app";
 const GROWTH_ORIGIN = "https://apxl-growth-story.vercel.app";
 
 // PXL Chat — full SaaS app (auth, API routes, embeddable widget) living on its
-// own origin. A redirect, not a rewrite: proxying it under a path would require
-// basePath plus prefixing every client fetch in the app.
+// own origin. Proxied in under /pxlchat, same as The Growth Story: the app sets
+// basePath "/pxlchat", so the prefix is preserved on both sides of the rewrite
+// and its /_next/* assets resolve.
+//
+// Note the embed snippet still points customers at pxlchat.vercel.app/pxlchat
+// directly — widget traffic (including the SSE chat stream) skips this proxy.
 const PXLCHAT_ORIGIN = "https://pxlchat.vercel.app";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  async redirects() {
-    return [
-      { source: "/pxlchat", destination: PXLCHAT_ORIGIN, permanent: false },
-      {
-        source: "/pxlchat/:path*",
-        destination: `${PXLCHAT_ORIGIN}/:path*`,
-        permanent: false,
-      },
-    ];
-  },
   async rewrites() {
     return [
+      { source: "/pxlchat", destination: `${PXLCHAT_ORIGIN}/pxlchat` },
+      { source: "/pxlchat/:path*", destination: `${PXLCHAT_ORIGIN}/pxlchat/:path*` },
       { source: "/rsvp", destination: `${RSVP_ORIGIN}/rsvp` },
       { source: "/rsvp/:path*", destination: `${RSVP_ORIGIN}/rsvp/:path*` },
       {

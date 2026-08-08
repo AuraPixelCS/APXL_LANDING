@@ -41,9 +41,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </PixelChatProvider>
       <CustomCursor />
-      {/* PXL Chat — "Pixel Bot Main", configured in the PXL Chat Studio */}
+      {/* PXL Chat — "Pixel Bot Main", configured in the PXL Chat Studio.
+          Points at the app's own origin (not aurapixel.live/pxlchat) so widget
+          traffic skips this site's proxy; /pxlchat is the app's basePath, and
+          the widget resolves /api/* and /vendor/* relative to this URL. */}
       <Script
-        src="https://pxlchat.vercel.app/widget.js"
+        src="https://pxlchat.vercel.app/pxlchat/widget.js"
         data-bot="pk_live_kel03udbnoft"
         strategy="afterInteractive"
       />
