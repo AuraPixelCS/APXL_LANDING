@@ -103,7 +103,18 @@ export default function Footer() {
 
         <div className="flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-8 text-xs text-white/55 sm:flex-row sm:items-center">
           <p>© {year} Aura Pixel Studio. All Rights Reserved.</p>
+          {/* Our own properties first, then legal. Each of these is a separate
+              Vercel project proxied in under a path (see next.config.ts), so the
+              router falls back to a hard navigation — which is what we want. */}
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <Link href="/pxlchat" className="transition hover:text-white">
+              PXL Chat
+            </Link>
+            <span className="text-white/30">·</span>
+            <Link href="/thegrowthstorymy" className="transition hover:text-white">
+              The Growth Story MY
+            </Link>
+            <span className="text-white/30">·</span>
             <Link href="/rsvp" className="transition hover:text-white">
               RSVP
             </Link>
