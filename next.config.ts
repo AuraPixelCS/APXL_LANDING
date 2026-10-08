@@ -16,12 +16,18 @@ const GROWTH_ORIGIN = "https://apxl-growth-story.vercel.app";
 // directly — widget traffic (including the SSE chat stream) skips this proxy.
 const PXLCHAT_ORIGIN = "https://pxlchat.vercel.app";
 
+// AuraPixel Ops — internal operations panel (../ap-ops), Vercel project
+// apxl-ops. Sets basePath "/ops", so the prefix is preserved on both sides.
+const OPS_ORIGIN = "https://apxl-ops.vercel.app";
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   async rewrites() {
     return [
       { source: "/pxlchat", destination: `${PXLCHAT_ORIGIN}/pxlchat` },
       { source: "/pxlchat/:path*", destination: `${PXLCHAT_ORIGIN}/pxlchat/:path*` },
+      { source: "/ops", destination: `${OPS_ORIGIN}/ops` },
+      { source: "/ops/:path*", destination: `${OPS_ORIGIN}/ops/:path*` },
       { source: "/rsvp", destination: `${RSVP_ORIGIN}/rsvp` },
       { source: "/rsvp/:path*", destination: `${RSVP_ORIGIN}/rsvp/:path*` },
       {
